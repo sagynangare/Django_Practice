@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Welcome to Sagar's block</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'personal/css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+		.modal {
+			display: none; /* Hidden by default */
+			position: fixed; /* Stay in place */
+			z-index: 1; /* Sit on top */
+			left: 0;
+			top: 0;
+			width: 100%; /* Full width */
+			height: 100%; /* Full height */
+			overflow: auto; /* Enable scroll if needed */
+			background-color: rgb(0,0,0); /* Fallback color */
+			background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+			padding-top: 60px;
+		}
+
+	/* Modal Content/Box */
+		.modal-content {
+			background-color: #fefefe;
+			margin: 5px auto; /* 15% from the top and centered */
+			border: 1px solid #888;
+			width: 80%; /* Could be more or less, depending on screen size */
+		}
+
+	/* The Close Button */
+		.close {
+		/* Position it in the top right corner outside of the modal */
+			position: absolute;
+			right: 25px;
+			top: 0; 
+			color: #000;
+			font-size: 35px;
+			font-weight: bold;
+		}
+
+	/* Close button on hover */
+		.close:hover,
+		.close:focus {
+			color: red;
+			cursor: pointer;
+		}
+
+	/* Add Zoom Animation */
+		.animate {
+			-webkit-animation: animatezoom 0.6s;
+			animation: animatezoom 0.6s
+		}
+
+		@-webkit-keyframes animatezoom {
+			from {-webkit-transform: scale(0)} 
+			to {-webkit-transform: scale(1)}
+		}
+
+		@keyframes animatezoom {
+			from {transform: scale(0)} 
+			to {transform: scale(1)}
+		}
+		.loginform ul {
+			padding: 0;
+			margin: 0;
+			}
+		.loginform li {
+			display: inline;
+			float: left;
+			}
+		.loginform input:not([type=submit]) {
+			padding: 5px;
+			margin-right: 10px;
+			border: 1px solid rgba(0, 0, 0, 0.3);
+			border-radius: 3px;
+			box-shadow: inset 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 
+			0px 1px 0px 0px rgba(250, 250, 250, 0.5) ;
+			}
+			
+		.loginform input[type=submit] {
+			border: 1px solid rgba(0, 0, 0, 0.3);
+			background: #64c8ef; /* Old browsers */
+			background: -moz-linear-gradient(top,  #64c8ef 0%, #00a2e2 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#64c8ef), color-stop(100%,#00a2e2)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  #64c8ef 0%,#00a2e2 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  #64c8ef 0%,#00a2e2 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  #64c8ef 0%,#00a2e2 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  #64c8ef 0%,#00a2e2 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#64c8ef', endColorstr='#00a2e2',GradientType=0 ); /* IE6-9 */
+			color: #fff;
+			padding: 5px 15px;
+			margin-right: 0;
+			margin-top: 15px;
+			border-radius: 3px;
+			text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+			}
+	</style>
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+	<div class="container-fluid" style="min-height:95%; ">
+		<div class="row">
+			  <div class="col-sm-2">
+				  <br>
+				  <center>
+					<img src="{% static 'personal/img/nagu.JPG' %}" class="responsive-img" style='max-height:100px;' alt="face">
+				  </center>
+			  </div>
+			  <div class="col-sm-10">
+				  <br>
+				  <center>
+				  <h3>Programming, Learning, Developing</h3>
+				  </center>
+				<div class="navbar-header">
+				    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				<ul class="nav nav-pillz nav-justified">
+					<li role="presentation" class="Active"><a onclick="document.getElementById('id01.style.display='none')" href="https://plus.google.com/communities">Community</a></li>
+					<li role="presentation" class="Active"><a onclick="document.getElementById('id01.style.display='none')" href="https://www.python.org/about/gettingstarted/">Programming</a></li>
+					
+					<li role="presentation" class="Active"><a onclick="document.getElementById('id01').style.display='none'" href="id01">Sign Up</a>
+					<!-- The Modal -->
+						<div id="id01" class="modal">
+						<span onclick="document.getElementById('id01').style.display='none'" 
+						class="close" title="Close Modal">&times;</span>
+						<section class="loginform cf">
+						<!-- Modal Content -->
+						<form class="modal-content animate" action="action_page.php">
+							<div class="imgcontainer">
+								<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/2000px-Python-logo-notext.svg.png" alt="Avatar"  width="80" height="80" class="avatar">
+							</div>
+
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="id_username">
+									Username:
+								</label>
+								<div class="col-sm-10">
+									<input id="id_username" maxlength="30" name="username" type="text">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="control-label col-sm-2" for="id_password">
+									Password:
+								</label>
+								<div class="col-sm-10">
+									<input id="id_password" maxlength="30" name="password" type="password">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<button type="submit" class="btn btn-success">Submit</button>
+								</div>
+							</div>
+							<div>
+								<input type="checkbox" checked="checked"> Remember me
+							</div>
+						
+						<div class="container" style="background-color:#f1f1f1">
+						<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+						<span class="psw"><a href="#"> Forgot password?</a></span>
+					
+						
+						</div>
+						</div>
+						</form>
+						</section>
+						<script>
+						// Get the modal
+						var modal = document.getElementById('id01');
+						// When the user clicks anywhere outside of the modal, close it
+						window.onclick = function(event) {
+						if (event.target == modal) {
+							modal.style.display = "none";
+							}
+						}
+						</script>
+						
+					</li>
+					<li role="presentation" class="Active"><a href="#">Logout</a></li>
+				  </ul>
+				</div>
+			  </div>
+		</div><hr>
+
+		<div class="row">
+		  <div class="col-sm-2">
+		  <br>
+
+		  <br>
+		   <!-- Great, til you resize. -->
+			<!--<div class="well bs-sidebar affix" id="sidebar" style="background-color:#fff">-->
+			<div class="well bs-sidebar" id="sidebar" style="background-color:#fff">
+			  <ul class="nav nav-pills nav-stacked">
+				<li><a href='/'>Home</a></li>
+				<li><a href='/blog/'>Blog</a></li>
+				<li><a href='/contact/'>Contact</a></li>
+				<li><a href='/LoginRequest/'>Login</a></li>
+			  </ul>
+			</div> <!--well bs-sidebar affix-->
+		  </div> <!--col-sm-2-->
+		  <div class="col-sm-10">
+		  
+			<div class='container-fluid'>
+			<br><br>
+			   {% block content %}
+			   {% endblock %}	
+			</div>
+		  </div>
+		</div>
+		
+	</div>
+	<footer>
+		<div class="container-fluid" style='margin-left:15px'>
+			<p><a href="#" target="blank">Contact</a> | <a href="https://www.linkedin.com/nhome/?trk=" target="https://www.linkedin.com/nhome/?trk=">LinkedIn</a> | <a href="https://twitter.com/sagar31101" target="blank">Twitter</a> | <a href="https://plus.google.com/" target="blank">Google+</a></p>
+		</div>
+	</footer>	
+	
+</body>
+
+</html>
